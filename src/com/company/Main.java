@@ -11,6 +11,20 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        StainGuard basic = new StainGuard("3M", "Basic Protect");
+        StainGuard ultra = new StainGuard("Dow", "Max Protect Formula");
+
+        Bed andysBed = new Bed("Sealy", "King", basic);
+        Rug throwRug = new Rug("Throw", 11, 25, ultra);
+
+
+        Room andysRoom = new Room(andysBed, throwRug);
+        System.out.println(andysRoom.getBed().getModel() + " " + andysRoom.bed.getSize());
+        System.out.println(andysRoom.rug.getRugType() + " has an area of "+ throwRug.getArea() + " inches");
+
+        andysRoom.bed.bedProtect.checkWarrenty();
+        andysRoom.rug.rugGuard.checkWarrenty();
+
     }
+
 }
